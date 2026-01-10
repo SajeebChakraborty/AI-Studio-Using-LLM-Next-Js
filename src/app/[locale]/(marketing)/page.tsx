@@ -1,17 +1,12 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 
 type IIndexProps = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata(props: IIndexProps): Promise<Metadata> {
-  const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'Index',
-  });
+export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: 'AI Studio - Generate Scripts and Audio',

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 
 const LANGUAGES = [
   { code: 'ar', name: 'Arabic' },
@@ -27,7 +26,7 @@ const FORMATS = ['monologue', 'dialogue'];
 const PLATFORMS = ['facebook', 'linkedin', 'youtube', 'tiktok', 'x', 'instagram', 'threads'];
 
 export default function ScriptGeneratePage() {
-  const t = useTranslations('RootLayout');
+
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<any>(null);
   const [formData, setFormData] = useState({
